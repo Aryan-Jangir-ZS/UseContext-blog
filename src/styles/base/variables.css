@@ -1,0 +1,23 @@
+:root {
+  --accent-blue: #3182ce;
+  --accent-blue-light: #4299e1;
+  --accent-blue-dark: #2c5282;
+  --primary-light: #ffffff;
+  --secondary-light: #f8f9fa;
+  --text-light: #2d3748;
+  --nav-light: #4a5568;
+  --sidebar-light: #edf2f7;
+  --primary-dark: #1a202c;
+  --secondary-dark: #2d3748;
+  --text-dark: #f7fafc;
+  --nav-dark: #2d3748;
+  --sidebar-dark: #283141;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.1);
+} 
