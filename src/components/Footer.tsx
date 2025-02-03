@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-content">
-        <span>© 2024 Aryan Jangir | React Developer</span>
+        <span>© 2024 Aryan Jangir</span>
         <a 
           href="https://github.com/AryanJangir-zs/Blog-app" 
           target="_blank" 
