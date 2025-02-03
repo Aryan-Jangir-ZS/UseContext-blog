@@ -17,7 +17,7 @@ const ThemeWrapper = ({ children }: { children: React.ReactNode }) => {
     } else if (savedTheme !== theme) {
       toggleTheme();
     }
-  }, []);
+  }, [theme, toggleTheme]);
 
   React.useEffect(() => {
     if (theme !== 'system') {

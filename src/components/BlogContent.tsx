@@ -38,7 +38,7 @@ const BlogContent = () => {
             <h2 id="why-care">Why Should You Care About useContext?</h2>
             <p>
               <strong>useContext</strong> is a React Hook that lets you read and subscribe to context from your component.
-              It's particularly useful when you need to share data that can be considered "global" for a tree of React components.
+              It&apos;s particularly useful when you need to share data that can be considered &quot;global&quot; for a tree of React components.
               This hook is essential for managing global state, such as themes or user authentication, and makes your code cleaner and more maintainable.
             </p>
 
