@@ -40,6 +40,51 @@ header::after {
   position: relative;
   display: inline-block;
   margin-left: auto;
+  z-index: 1001;
+}
+
+.theme-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--primary-light);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  min-width: 150px;
+  z-index: 1001;
+  display: none;
+  margin-top: -1px;
+}
+
+.dropdown.show {
+  display: block;
+}
+
+body.dark .dropdown {
+  background: var(--primary-dark);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text-light);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body.dark .dropdown a {
+  color: var(--text-dark);
 }
 
 .header-title {
@@ -59,11 +104,6 @@ body.dark .header-title {
   background: linear-gradient(45deg, #60A5FA, #3B82F6);
 }
 
-.header-title:hover {
-  transform: translateY(-1px);
-  text-shadow: 0 2px 10px rgba(49, 130, 206, 0.3);
-}
-
 @media (max-width: 768px) {
   .header-title {
     font-size: 1.1rem;
@@ -77,4 +117,3 @@ body.dark .header-title {
   }
 }
 
-/* Rest of header styles... */ 

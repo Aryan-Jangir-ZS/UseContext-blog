@@ -13,17 +13,8 @@ export const metadata: Metadata = {
   description: 'A comprehensive guide to using React\'s useContext Hook. Learn about context management, best practices, performance optimization, and common pitfalls.',
   keywords: 'React, useContext, React Hooks, Context API, React Tutorial, State Management',
   authors: [{ name: 'Aryan Jangir' }],
-  openGraph: {
-    title: 'React useContext Hook Guide',
-    description: 'Master React\'s useContext Hook with our comprehensive guide',
-    type: 'article',
-    url: 'https://your-domain.com/blog/usecontext-guide',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'React useContext Hook Guide',
-    description: 'Master React\'s useContext Hook with our comprehensive guide',
-  }
+ 
+  
 }
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {

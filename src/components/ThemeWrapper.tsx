@@ -1,55 +1,41 @@
 'use client';
 
-import React, { useCallback } from 'react';
+import React, { useState } from 'react';
 import { useTheme } from '@/context/ThemeContext';
 import Footer from './Footer';
 
 const ThemeWrapper = ({ children }: { children: React.ReactNode }) => {
   const { theme, toggleTheme } = useTheme();
+  const [showDropdown, setShowDropdown] = useState(false);
 
-  const handleSystemTheme = useCallback(() => {
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    if (systemTheme !== theme) {
-      toggleTheme();
-    }
-  }, [theme, toggleTheme]);
-
-  React.useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (!savedTheme) {
-      handleSystemTheme();
-      localStorage.setItem('theme', 'system');
-    } else if (savedTheme === 'system') {
-      handleSystemTheme();
-    } else if (savedTheme !== theme) {
-      toggleTheme();
-    }
-  }, []); 
-
-  React.useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme && savedTheme !== 'system') {
-      localStorage.setItem('theme', theme);
-    }
-  }, [theme]);
+  const handleToggleClick = () => {
+    setShowDropdown(!showDropdown);
+  };
 
   const handleThemeChange = (newTheme: string) => {
     if (newTheme === 'system') {
-      handleSystemTheme();
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      if (systemTheme !== theme) {
+        toggleTheme();
+      }
       localStorage.setItem('theme', 'system');
     } else if (newTheme !== theme) {
       toggleTheme();
       localStorage.setItem('theme', newTheme);
     }
+    setShowDropdown(false);
   };
+
 
   return (
     <body className={theme}>
       <header>
         <div className="header-title">Deep Dive: useContext</div>
         <div className="theme-toggle">
-          <button>{theme === 'light' ? '☀️' : '🌙'}</button>
-          <div className="dropdown">
+          <button onClick={handleToggleClick}>
+            {theme === 'light' ? '☀️' : '🌙'}
+          </button>
+          <div className={`dropdown ${showDropdown ? 'show' : ''}`}>
             <a onClick={() => handleThemeChange('light')}>Light</a>
             <a onClick={() => handleThemeChange('dark')}>Dark</a>
             <a onClick={() => handleThemeChange('system')}>System</a>
